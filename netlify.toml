@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build && npm run export"
+  publish = "out"
+  
+[[redirects]]
+  from = "https://productblog.amplience.com/index.html"
+  to = "https://amplience.com/blog"
+  status = 301
+  force = true
