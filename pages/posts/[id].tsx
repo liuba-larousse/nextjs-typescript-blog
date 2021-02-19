@@ -5,6 +5,7 @@ import {
   InferGetStaticPropsType,
   GetStaticPaths,
 } from 'next';
+import Head from 'next/head';
 import {
   Article,
   BlogpostImage,
@@ -14,11 +15,16 @@ import type { Post } from '../index';
 export default function BlogPost({
   post,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const { title, body } = post;
   return (
     <Article>
-      <h1>{post.title}</h1>
+      <Head>
+        <title>{title}</title>
+        <meta property='og:title' content={title} />
+      </Head>
+      <h1>{title}</h1>
       <BlogpostImage src='/example.jpg' alt='night city' />
-      <p>{post.body}</p>
+      <p>{body}</p>
     </Article>
   );
 }

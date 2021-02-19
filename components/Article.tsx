@@ -10,5 +10,5 @@ export const Article = styled.article`
 export const BlogpostImage = styled.img`
   width: 100%;
   height: auto;
-  margin: 20px;
+  margin: 20px 0;
 `;
